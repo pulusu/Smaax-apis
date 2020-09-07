@@ -2,10 +2,13 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const schema = new Schema({
-    username: { type: String, unique: true, required: true },
-    hash: { type: String, required: true },
-    firstName: { type: String, required: true },
-    lastName: { type: String, required: true },
+    mobile_number: { type: String, unique: true, required: true },
+    mobile_verified: { type: Number, default: 0 },
+    email: { type: String, unique: true },
+    username: { type: String },
+    hash: { type: String},
+    firstName: { type: String },
+    lastName: { type: String },
     createdDate: { type: Date, default: Date.now }
 });
 

@@ -19,6 +19,7 @@ app.use('/nationalities', require('./nationalities/nationalities.controller'));
 app.use('/countries', require('./countries/countries.controller'));
 app.use('/language', require('./language/language.controller'));
 app.use('/locations', require('./locations/locations.controller'));
+app.use('/otp_history', require('./otp_history/otp_history.controller'));
 
 // global error handler
 app.use(errorHandler);

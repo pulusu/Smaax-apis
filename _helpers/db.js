@@ -9,5 +9,6 @@ module.exports = {
     Nationalities: require('../nationalities/nationalities.model'),
     Language: require('../language/language.model'),
     Locations: require('../locations/locations.model'), 
-    Countries: require('../countries/countries.model')
+    Countries: require('../countries/countries.model'),
+    otp_history: require('../otp_history/otp_history.model')
 };  
