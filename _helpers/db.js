@@ -10,5 +10,10 @@ module.exports = {
     Language: require('../language/language.model'),
     Locations: require('../locations/locations.model'), 
     Countries: require('../countries/countries.model'),
-    otp_history: require('../otp_history/otp_history.model')
+    otp_history: require('../otp_history/otp_history.model'),
+    Campaign: require('../campaign/campaign.model'),
+    Attachments: require('../attachments/attachments.model'),
+    PostTypes: require('../postTypes/postTypes.model'),
+    Topics: require('../topics/topics.model'),
+    SocialPlatforms: require('../socialPlatforms/socialPlatforms.model')
 };  

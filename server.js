@@ -20,6 +20,11 @@ app.use('/countries', require('./countries/countries.controller'));
 app.use('/language', require('./language/language.controller'));
 app.use('/locations', require('./locations/locations.controller'));
 app.use('/otp_history', require('./otp_history/otp_history.controller'));
+app.use('/campaign', require('./campaign/campaign.controller'));
+app.use('/attachments', require('./attachments/attachments.controller'));
+app.use('/postTypes', require('./postTypes/postTypes.controller'));
+app.use('/socialPlatforms', require('./socialPlatforms/socialPlatforms.controller'));
+app.use('/topics', require('./topics/topics.controller'));
 
 // global error handler
 app.use(errorHandler);
