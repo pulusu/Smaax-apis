@@ -28,6 +28,7 @@ function jwt() {
             '/campaign/dropdowns',
             '/locations',
             '/topics',
+            '/uploads',
             '/topics/create',
             '/language',
             '/otp_history',

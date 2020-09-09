@@ -9,7 +9,9 @@ const errorHandler = require('_helpers/error-handler');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
-
+var path = require('path');
+const serveIndex = require('serve-index');
+app.use('/uploads', express.static('uploads'), serveIndex('uploads', {'icons': true})); 
 // use JWT auth to secure the api
 app.use(jwt());
 
