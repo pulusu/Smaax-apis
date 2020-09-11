@@ -15,5 +15,6 @@ module.exports = {
     Attachments: require('../attachments/attachments.model'),
     PostTypes: require('../postTypes/postTypes.model'),
     Topics: require('../topics/topics.model'),
+    Userroles: require('../userroles/userroles.model'),
     SocialPlatforms: require('../socialPlatforms/socialPlatforms.model')
 };  

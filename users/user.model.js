@@ -3,12 +3,19 @@ const Schema = mongoose.Schema;
 
 const schema = new Schema({
     mobile_number: { type: String, unique: true, required: true },
-    mobile_verified: { type: Number, default: 0 },
+    hash: { type: String,required: true },
     email: { type: String, unique: true },
-    username: { type: String },
+    name: { type: String },
     hash: { type: String},
-    firstName: { type: String },
-    lastName: { type: String },
+    gender: { type: String },
+    user_role: [
+    { type: mongoose.Schema.ObjectId, ref: 'userroles' }  ],
+    user_profile_pic: { type: String },
+    facebook_username: { type: String },
+    instagram_username: { type: String },
+    twitter_username: { type: String },
+    mobile_verified: { type: Number, default: 0 },
+    lastUpdateDate: { type: Date, default: Date.now },
     createdDate: { type: Date, default: Date.now }
 });
 
@@ -21,4 +28,4 @@ schema.set('toJSON', {
     }
 });
 
-module.exports = mongoose.model('User', schema);
+module.exports = mongoose.model('users', schema);

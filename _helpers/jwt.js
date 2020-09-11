@@ -9,6 +9,7 @@ function jwt() {
         path: [
             // public routes that don't require authentication
             '/users/authenticate',
+            '/users/roles',
             '/users/register',
             '/countries',
             '/campaign/create',
@@ -29,6 +30,8 @@ function jwt() {
             '/locations',
             '/topics',
             '/uploads',
+            '/userroles',
+            '/userroles/create',
             '/topics/create',
             '/language',
             '/otp_history',

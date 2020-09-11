@@ -27,6 +27,7 @@ app.use('/attachments', require('./attachments/attachments.controller'));
 app.use('/postTypes', require('./postTypes/postTypes.controller'));
 app.use('/socialPlatforms', require('./socialPlatforms/socialPlatforms.controller'));
 app.use('/topics', require('./topics/topics.controller'));
+app.use('/userroles', require('./userroles/userroles.controller'));
 
 // global error handler
 app.use(errorHandler);
@@ -35,4 +36,4 @@ app.use(errorHandler);
 const port = process.env.NODE_ENV === 'production' ? (process.env.PORT || 80) : 4000;
 const server = app.listen(port, function () {
     console.log('Server listening on port ' + port);
-});
+}); 
