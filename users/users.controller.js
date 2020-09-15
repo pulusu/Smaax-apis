@@ -77,7 +77,7 @@ function getById(req, res, next) {
 
 function update(req, res, next) {
     userService.update(req.params.id, req.body,req.file)
-        .then(user => user ? res.json({ message: 'Update successfully', error:false,response:user}) : res.status(400).json({ message: 'not updated' }))
+        .then(user => user ? res.json(user) : res.status(400).json({ message: 'not updated' }))
         .catch(err => next(err));
 }
 

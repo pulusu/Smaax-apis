@@ -43,6 +43,7 @@ async function getAll() {
     return await User.find();
 }
 async function checkOtp(userParam) {
+	var obj = {}; 
 	const otp_history = await Otp_history.findOne({ mobile_number: userParam.mobile_number,otp: userParam.otp,status: 0 });
 	if (otp_history){
 		let mobile = userParam.mobile_number;
@@ -60,14 +61,18 @@ async function checkOtp(userParam) {
 					
 		if (user) {
 			const token = jwt.sign({ sub: user.id }, config.secret, { expiresIn: '7d' });
-			return {
+			obj['error']=false;
+			obj['message']="OTP verified";
+			obj['response']= {
 				...user.toJSON(),
 				token
 			}; 
 		}
 	}else{
-		return null;
+		obj['error']=true;
+		obj['message']="Enter Valid OTP";
 	}
+	return obj;
 	  
 }
 async function roles() {
@@ -126,6 +131,7 @@ async function update(id, userParam,user_profile_pic) {
     if (!user){
 		obj['message']='No users availble with this '+id;
 		obj['error']=true;
+		obj['user']=user;
 		
 	}else if (user.mobile_number !== userParam.mobile_number && await User.findOne({ mobile_number: userParam.mobile_number })) {
 		obj['message']='Mobile number "' + userParam.mobile_number + '" is already taken';

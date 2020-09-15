@@ -15,8 +15,10 @@ module.exports = {
 
 
 async function getAll() {
-	return await Userroles.find({ $or: [ { userrole_name: 'Influencer' }, { userrole_name: 'Brand Advertiser' } ] });
-//    return await Userroles.find();
+	var obj = {}; 
+	obj['error']=false;
+	obj['response']= await Userroles.find({ $or: [ { userrole_name: 'Influencer' }, { userrole_name: 'Brand Advertiser' } ] });;
+	return obj;
 }
 
 async function getById(id) {
